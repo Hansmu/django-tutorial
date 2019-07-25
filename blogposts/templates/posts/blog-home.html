@@ -9,6 +9,7 @@
     <h2>Latest posts</h2>
     {% for post in posts.all %}
         {{ post.title }}<br/>
+        <img src="{{ post.image.url }}"/>
         {{ post.formatted_published_date }}<br/>
         {{ post.summary }}<br/>
         <br/>

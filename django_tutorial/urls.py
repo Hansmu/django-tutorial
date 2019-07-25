@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 from . import views
 from blogposts import views as blog_views
 
@@ -24,4 +26,4 @@ urlpatterns = [
     url(r'^pig-latin/', views.latin_home, name='latin-home'),
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
     url(r'^blog/', blog_views.blog_home, name='blog-home'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
