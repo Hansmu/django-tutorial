@@ -25,3 +25,5 @@ To create an app use *python manage.py startapp \<app name\>*
 to be applied to the DB and creates a migration file.
 
 *python manage.py migrate* applies all the migrations to the DB.
+
+*python manage.py createsuperuser* to create an admin user with which to login from the admin page.

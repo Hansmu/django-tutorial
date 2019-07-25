@@ -6,3 +6,7 @@ class Post(models.Model):
     published_date = models.DateTimeField()
     image = models.ImageField(upload_to='media/')
     body = models.TextField()
+
+    # Used in the admin page to display the text for an entity
+    def __str__(self):
+        return self.title
