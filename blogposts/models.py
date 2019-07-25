@@ -10,3 +10,9 @@ class Post(models.Model):
     # Used in the admin page to display the text for an entity
     def __str__(self):
         return self.title
+
+    def formatted_published_date(self):
+        return self.published_date.strftime('%a %b %Y')
+
+    def summary(self):
+        return self.body[:100]

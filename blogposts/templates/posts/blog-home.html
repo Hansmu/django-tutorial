@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blogs Home</title>
+    <title>Blog Home</title>
 </head>
 <body>
-
+    <h1>Bobbert's Bloggert</h1>
+    <h2>Latest posts</h2>
+    {% for post in posts.all %}
+        {{ post.title }}<br/>
+        {{ post.formatted_published_date }}<br/>
+        {{ post.summary }}<br/>
+        <br/>
+    {% endfor %}
 </body>
 </html>
