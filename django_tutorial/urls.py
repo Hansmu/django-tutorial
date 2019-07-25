@@ -19,6 +19,6 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home),  # The first parameter is a regex. $ matches the / landing page.
+    url(r'^$', views.home, name='home'),  # The first parameter is a regex. $ matches the / landing page.
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
 ]
