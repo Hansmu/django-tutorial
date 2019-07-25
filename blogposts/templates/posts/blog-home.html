@@ -8,10 +8,8 @@
     <h1>Bobbert's Bloggert</h1>
     <h2>Latest posts</h2>
     {% for post in posts.all %}
-        {{ post.title }}<br/>
-        <img src="{{ post.image.url }}"/>
+        <a href="{% url 'post_details' post.id %}" >{{ post.title }}</a><br/>
         {{ post.formatted_published_date }}<br/>
-        {{ post.summary }}<br/>
         <br/>
     {% endfor %}
 </body>

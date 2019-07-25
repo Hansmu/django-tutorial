@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^pig-latin/', views.latin_home, name='latin-home'),
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
     url(r'^blog/', blog_views.blog_home, name='blog-home'),
+    url(r'^blog/posts/(?P<post_id>[0-9]+)/$', blog_views.post_details, name='post_details')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
