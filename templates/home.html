@@ -1,7 +1,7 @@
 <h1>Pig Latin Translator!</h1>
 
-<form>
-    <input type="text" />
+<form action="{% url 'url-translate-alias-for-django' %}"> <!-- This executes Python code. -->
+    <input type="text" name="translationText" />
     <br/>
     <button type="submit">
         Translate
