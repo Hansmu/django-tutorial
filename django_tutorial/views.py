@@ -2,8 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render  # Used to return HTML
 
 
-def home(request):
-    return render(request, 'home.html')
+def projects_home(request):
+    return render(request, 'projects-navigation.html')
+
+
+def latin_home(request):
+    return render(request, 'pig-latin/latin-home.html')
 
 
 def translate(request):
@@ -20,7 +24,7 @@ def translate(request):
 
         translated_text += translated_word + ' '
 
-    return render(request, 'translate.html', {
+    return render(request, 'pig-latin/translate.html', {
         'original': translation_text,
         'translation': translated_text
     })  # Dictionary that is sent to the front for using

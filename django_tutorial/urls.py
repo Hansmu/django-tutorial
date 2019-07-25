@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from . import views
+from blogposts import views as blog_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='home'),  # The first parameter is a regex. $ matches the / landing page.
+    url(r'^$', views.projects_home, name='home'),  # The first parameter is a regex. $ matches the / landing page.
+    url(r'^pig-latin/', views.latin_home, name='latin-home'),
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
+    url(r'^blog/', blog_views.blog_home, name='blog-home'),
 ]
