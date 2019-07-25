@@ -20,3 +20,8 @@ To deactivate, you'd use *deactivate*.
 
 It's better to have the templates folder under your app folder.
 To create an app use *python manage.py startapp \<app name\>*
+
+*python manage.py makemigrations* checks if there are any changes to the models that have 
+to be applied to the DB and creates a migration file.
+
+*python manage.py migrate* applies all the migrations to the DB.
