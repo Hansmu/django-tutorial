@@ -17,3 +17,6 @@ Then to create a virtual env you'd use *virtualenv \<env name\>*.
 To activate the venv, you'd use *source \<venv name\>/bin/activate*.
 
 To deactivate, you'd use *deactivate*.
+
+It's better to have the templates folder under your app folder.
+To create an app use *python manage.py startapp \<app name\>*
