@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from . import views
 from blogposts import views as blog_views
+from accounts import views as account_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     url(r'^pig-latin/', views.latin_home, name='latin-home'),
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
     url(r'^blog/posts/(?P<post_id>[0-9]+)/$', blog_views.post_details, name='post_details'),
-    url(r'^blog/', blog_views.blog_home, name='blog-home')
+    url(r'^blog/', blog_views.blog_home, name='blog-home'),
+    url(r'^clone/signup/', account_views.signup, name='clone-signup')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
