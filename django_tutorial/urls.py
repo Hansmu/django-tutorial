@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^translate/', views.translate, name='url-translate-alias-for-django'),
 
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^reddit-clone/', include('reddit_clone.urls')),
     url(r'^blog/', include('blogposts.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
