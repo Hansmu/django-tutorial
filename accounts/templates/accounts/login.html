@@ -11,6 +11,10 @@
     {% endif %}
 
     <form method="POST" action="{% url 'accounts:clone-login' %}">
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+        {% endif %}
+
         {% csrf_token %}
         <label for="username">Username: </label>
         <input type="text" name="username">

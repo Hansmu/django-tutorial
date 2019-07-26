@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 
@@ -28,6 +28,8 @@ def user_login(request):
         user = authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None:
             login(request, user)
+            if 'next' in request.POST and request.POST['next'] is not None:
+                return redirect(request.POST['next'])
         else:
             return render(request, 'accounts/login.html', {'error': 'Could not login with the provided info'})
     else:
