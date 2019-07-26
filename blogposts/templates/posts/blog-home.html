@@ -49,7 +49,8 @@
         </div>
     </nav>
 
-
+    {% load static %} <!-- So that the static files would be usable -->
+    <img src="{%  static 'posts/home.jpg' %}" class="img-responsive center-block" style="max-width: 1080px;"/>
     <h1 class="text-center">Bobbert's Bloggert</h1>
     <h2>Latest posts</h2>
     <hr/>
