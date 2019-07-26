@@ -5,10 +5,12 @@
     <title>Post Details</title>
 </head>
 <body>
-    {{ post.title }}<br/>
-    <img src="{{ post.image.url }}"/>
-    {{ post.formatted_published_date }}<br/>
-    {{ post.body }}<br/>
-    <br/>
+    <div class="container">
+        <h3>{{ post.title }}</h3><br/>
+        <img src="{{ post.image.url }}" class="img-responsive" style="max-height:150px;"/><br/>
+        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>{{ post.formatted_published_date }}<br/>
+        {{ post.body }}<br/>
+        <br/>
+    </div>
 </body>
 </html>
