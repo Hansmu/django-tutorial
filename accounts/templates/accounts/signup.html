@@ -10,7 +10,7 @@
         {{ error }}
     {% endif %}
 
-    <form method="POST" action="{% url 'clone-signup' %}">
+    <form method="POST" action="{% url 'accounts:clone-signup' %}">
         {% csrf_token %}
         <label for="username">Username: </label>
         <input type="text" name="username">
