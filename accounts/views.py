@@ -24,6 +24,8 @@ def signup(request):
 
 
 def user_login(request):
+    error = ''
+
     if request.method == 'POST':
         user = authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None:
@@ -31,6 +33,6 @@ def user_login(request):
             if 'next' in request.POST and request.POST['next'] is not None:
                 return redirect(request.POST['next'])
         else:
-            return render(request, 'accounts/login.html', {'error': 'Could not login with the provided info'})
-    else:
-        return render(request, 'accounts/login.html')
+            error = 'Could not login with the provided info'
+
+    return render(request, 'accounts/login.html', {'error': error})
