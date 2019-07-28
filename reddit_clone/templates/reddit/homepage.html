@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit Clone</title>
+</head>
+<body>
+<h1>The homepage of nowhere</h1>
+<a href="{% url 'clone-create-post' %}">New post</a>
+<br/>
+{% for post in posts.all %}
+    <a>UP</a> {{ post.score }} <a>DOWN</a>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <br/>
+    {{ post.published_date }} by {{ post.author.username }}
+{% endfor %}
+</body>
+</html>
