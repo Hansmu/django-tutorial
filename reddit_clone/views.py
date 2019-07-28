@@ -30,3 +30,19 @@ def create(request):
 def homepage(request):
     posts = Post.objects.order_by('score')
     return render(request, 'reddit/homepage.html', {'posts': posts})
+
+
+def upvote(request, post_id):
+    if request.method == 'POST':
+        post = Post.objects.get(pk=post_id)
+        post.score += 1
+        post.save()
+        return redirect('clone-homepage')
+
+
+def downvote(request, post_id):
+    if request.method == 'POST':
+        post = Post.objects.get(pk=post_id)
+        post.score -= 1
+        post.save()
+        return redirect('clone-homepage')

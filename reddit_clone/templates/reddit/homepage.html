@@ -9,7 +9,18 @@
 <a href="{% url 'clone-create-post' %}">New post</a>
 <br/>
 {% for post in posts.all %}
-    <a>UP</a> {{ post.score }} <a>DOWN</a>
+    <form method="POST" action="{% url 'clone-upvote' post.id%}">
+        {% csrf_token %}
+        <button type="submit">UP</button>
+    </form>
+
+    {{ post.score }}
+
+    <form method="POST" action="{% url 'clone-downvote' post.id %}">
+        {% csrf_token %}
+        <button type="submit">DOWN</button>
+    </form>
+
     <a href="{{ post.url }}">{{ post.title }}</a>
     <br/>
     {{ post.published_date }} by {{ post.author.username }}
